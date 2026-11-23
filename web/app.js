@@ -81,9 +81,10 @@ async function doAction(action, payload) {
     state = r.state; seq = r.seq; lastSeq = seq;
     if (r.events) events = events.concat(r.events);
     render();
+    // ویبرشن گوشی هنگام هر اقدام (بازی کارت، بید، حکم و...)
+    if (navigator.vibrate) navigator.vibrate([80, 40, 80]);
   } catch (e) { alert('خطا در ارتباط با سرور'); }
 }
-
 /* ---------------- ابزارها ---------------- */
 function esc(s) {
   return String(s).replace(/[&<>"]/g, m => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[m]));
