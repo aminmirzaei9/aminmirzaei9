@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no, viewport-fit=cover">
+<meta name="theme-color" content="#070a14">
+<title>غفون — حکم با اعلام دست</title>
+<link rel="stylesheet" href="style.css">
+<script src="https://telegram.org/js/telegram-web-app.js"></script>
+</head>
+<body>
+<div id="app">
+  <header class="topbar">
+    <div class="brand"><div class="logo">🎴</div><div>غفون</div></div>
+    <div id="scorebar" class="scorebar"></div>
+    <button id="menuBtn" class="iconbtn" onclick="toggleMenu()">⋮</button>
+  </header>
+
+  <main id="screen" class="screen"></main>
+
+  <!-- منوی پایین -->
+  <nav id="tabbar" class="tabbar hidden">
+    <button class="tab" data-tab="game" onclick="switchTab('game')">بازی</button>
+    <button class="tab" data-tab="seats" onclick="switchTab('seats')">صندلی‌ها</button>
+    <button class="tab" data-tab="help" onclick="switchTab('help')">راهنما</button>
+  </nav>
+
+  <div id="feed" class="feed"></div>
+
+  <!-- منوی شناور -->
+  <div id="floatMenu" class="overlay">
+    <div class="modal">
+      <h2>منو</h2>
+      <div class="row">
+        <button class="btn gold small" onclick="closeMenu(); shareGame()">🔗 دعوت دوستان</button>
+      </div>
+      <div class="row">
+        <button class="btn small" onclick="closeMenu(); switchTab('seats')">🪑 چیدن صندلی</button>
+      </div>
+      <div class="row">
+        <button class="btn pass small" onclick="closeMenu(); endGame()">❌ پایان بازی</button>
+      </div>
+      <div class="row" style="margin-top:14px">
+        <button class="btn ghost small" onclick="closeMenu()">بستن</button>
+      </div>
+    </div>
+  </div>
+</div>
+<script src="app.js"></script>
+</body>
+</html>
